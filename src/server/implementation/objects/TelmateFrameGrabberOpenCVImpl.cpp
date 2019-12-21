@@ -22,14 +22,14 @@ TelmateFrameGrabberOpenCVImpl::TelmateFrameGrabberOpenCVImpl ()
   this->uuid = "UUID_UNINITIALIZED";
   this->thrLoop = true;
   this->monThreadLoop = false;
-  this->snapInterval = 1000;
+  this->snapInterval = 60000;
   this->epName = "EP_NAME_UNINITIALIZED";
   this->storagePath = "/tmp/";
   this->framesCounter = 0;
   this->outputFormat = FGFMT_JPEG;
   this->lastQueueTimeStamp = 0;
   this->queueLength = 0;
-  this->monitorTimeoutMs = 10000; // 60 sec.
+  this->monitorTimeoutMs = 60000; // 60 sec.
 
   this->isThreaded = false;
   this->take = false;
