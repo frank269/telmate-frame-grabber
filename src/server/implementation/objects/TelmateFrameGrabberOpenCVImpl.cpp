@@ -166,6 +166,7 @@ void TelmateFrameGrabberOpenCVImpl::process(cv::Mat &mat) {
                                "TelmateFrameGrabberOpenCVImpl::queueHandler() imgwrite() failed. \n");*/
       }
       ++this->framesCounter;
+      this->take = false;
     }
   }
 }
