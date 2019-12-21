@@ -32,6 +32,7 @@ TelmateFrameGrabberOpenCVImpl::TelmateFrameGrabberOpenCVImpl ()
   this->monitorTimeoutMs = 10000; // 60 sec.
 
   this->isThreaded = false;
+  this->take = false;
 
   if(this->isThreaded) {
     this->frameQueue = new avis_blocking_queue<VideoFrame *>;
@@ -92,7 +93,7 @@ void TelmateFrameGrabberOpenCVImpl::process(cv::Mat &mat) {
 
 
 
-  if ((this->getCurrentTimestampLong() - this->lastQueueTimeStamp) >= this->snapInterval) {
+  if (this->take) { /* || (this->getCurrentTimestampLong() - this->lastQueueTimeStamp) >= this->snapInterval) {*/
 
     if(this->isThreaded) {
 
@@ -164,19 +165,9 @@ void TelmateFrameGrabberOpenCVImpl::process(cv::Mat &mat) {
         /*throw KurentoException(NOT_IMPLEMENTED,
                                "TelmateFrameGrabberOpenCVImpl::queueHandler() imgwrite() failed. \n");*/
       }
-
       ++this->framesCounter;
-
-
     }
-
-
   }
-
-
-
-
-
 }
 /*
  * This function is executed inside the queueHandler thread as a main() function.
@@ -299,7 +290,11 @@ void TelmateFrameGrabberOpenCVImpl::watchDogThread() {
 
 }
 
-
+void TelmateFrameGrabberOpenCVImpl::takePicture() {
+    //take picture
+    this->take = true;
+    return;
+}
 
 std::string TelmateFrameGrabberOpenCVImpl::getCurrentTimestampString() {
   struct timeval tp;

@@ -72,6 +72,11 @@ std::string TelmateFrameGrabberImpl::getSessionUUID ()
   return TelmateFrameGrabberOpenCVImpl::getSessionUUID ();
 }
 
+void TelmateFrameGrabberImpl::takePicture ()
+{
+    return TelmateFrameGrabberOpenCVImpl::takePicture ();
+}
+
 void TelmateFrameGrabberImpl::setSessionUUID (const std::string &puuid)
 {
   return TelmateFrameGrabberOpenCVImpl::setSessionUUID (puuid);

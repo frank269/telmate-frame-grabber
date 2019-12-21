@@ -62,6 +62,7 @@ public:
   int getMonitorTimeoutSec();
   std::string getSessionUUID();
   void setSessionUUID(const std::string &puuid );
+  void takePicture();
 
 private:
   std::string getCurrentTimestampString();
@@ -84,7 +85,7 @@ private:
   int64 monitorTimeoutMs;
 
   boost::atomic<bool> isThreaded;
-
+  boost::atomic<bool> take;
   void queueHandler();
   void watchDogThread();
 

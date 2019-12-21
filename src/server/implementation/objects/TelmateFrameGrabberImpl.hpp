@@ -54,6 +54,7 @@ public:
   void setMonitorTimeoutSec(int timeout);
   int getMonitorTimeoutSec();
   void setSessionUUID(const std::string &puuid);
+  void takePicture();
   std::string getSessionUUID();
   /* Next methods are automatically implemented by code generator */
   virtual bool connect (const std::string &eventType, std::shared_ptr<EventHandler> handler);

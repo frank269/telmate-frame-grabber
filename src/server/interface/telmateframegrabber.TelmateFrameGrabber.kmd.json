@@ -128,6 +128,11 @@
           ],
           "name": "setSessionUUID",
           "doc": "set the session UUID"
+        },
+        {
+          "params": [],
+          "name": "takePicture",
+          "doc": "take picture"
         }
 
 
