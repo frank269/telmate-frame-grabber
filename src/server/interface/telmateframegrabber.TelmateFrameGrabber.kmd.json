@@ -14,7 +14,125 @@
 	    "final": true
 	  }
 	]
-      }
+      },
+      "methods": [
+        {
+          "name": "cleanup",
+          "doc": "clear plugin data",
+          "params": [ ],
+          "return": {
+            "doc": "1 for true 0 for false",
+            "type": "int"
+          }
+        },
+        {
+          "name": "getSnapInterval",
+          "doc": "get Snapshot interval",
+          "params": [ ],
+          "return": {
+            "doc": "Value of current snapshot interval",
+            "type": "int"
+          }
+        },
+        {
+          "name": "setSnapInterval",
+          "doc": "set Snapshot interval.",
+          "params": [
+            {
+              "name": "snapInterval",
+              "doc": "Value of snapInterval in milliseconds",
+              "type": "int"
+            }
+          ]
+        },
+        {
+          "name": "getStoragePath",
+          "doc": "get the storage location for snapshots",
+          "params": [ ],
+          "return": {
+            "doc": "path of snapshots location",
+            "type": "String"
+          }
+        },
+        {
+          "name": "setStoragePath",
+          "doc": "set the storage location for snapshots",
+          "params": [
+            {
+              "name": "path",
+              "doc": "path of snapshots location",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "setWebRtcEpName",
+          "doc": "set the webetc endpoint name (used for storage location of snapshots)",
+          "params": [
+            {
+              "name": "epName",
+              "doc": "endpoint name",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "setOutputFormat",
+          "doc": "set the image storage format, 0x0=JPEG 0x1=PNG",
+          "params": [
+            {
+              "name": "outputFormat",
+              "doc": "output format",
+              "type": "int"
+            }
+          ]
+        },
+
+        {
+          "params": [],
+          "return": {
+            "type": "int",
+            "doc": "path of snapshots location"
+          },
+          "name": "getMonitorTimeoutSec",
+          "doc": "get monitoring Thread timeout in seconds"
+        },
+        {
+          "params": [
+            {
+              "name": "timeout",
+              "doc": "session timeout in sec",
+              "type": "int"
+            }
+          ],
+          "name": "setMonitorTimeoutSec",
+          "doc": "set monitoring Thread timeout in seconds"
+        },
+
+        {
+          "params": [],
+          "return": {
+            "type": "String",
+            "doc": "UUID set for session"
+          },
+          "name": "getSessionUUID",
+          "doc": "get the session id for this session"
+        },
+        {
+          "params": [
+            {
+              "name": "puuid",
+              "doc": "path of snapshots location",
+              "type": "String"
+            }
+          ],
+          "name": "setSessionUUID",
+          "doc": "set the session UUID"
+        }
+
+
+        /* methods */
+      ]
     }
   ]
 }
