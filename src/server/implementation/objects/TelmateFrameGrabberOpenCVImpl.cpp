@@ -121,6 +121,7 @@ void TelmateFrameGrabberOpenCVImpl::process(cv::Mat &mat) {
           /* Set jpeg params */
           params.push_back(CV_IMWRITE_JPEG_QUALITY);
               params.push_back(FG_JPEG_QUALITY);
+              params.push_back(100);
               image_extension = ".jpeg";
               break;
         case FGFMT_PNG:
@@ -133,6 +134,7 @@ void TelmateFrameGrabberOpenCVImpl::process(cv::Mat &mat) {
           /* Defaults to jpeg */
           params.push_back(CV_IMWRITE_JPEG_QUALITY);
               params.push_back(FG_JPEG_QUALITY);
+              params.push_back(100);
               image_extension = ".jpeg";
               break;
       }
